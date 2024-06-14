@@ -1,11 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>aopaa</h1>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="carouselExample" class="carousel slide" style="width: 100%; height: auto;">
+      <div class="carousel-inner">
+        <div class="carousel-item active containter">
+          <img src="/img/capa03.jpeg" class="d-block" alt="capa" style="width: 100%;">
+        </div>
+        <button type="button" class="botao-desafio-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Iniciar</button> 
+      </div>
+  </div>
+
+  <!-- Modal 1 -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="background-color: transparent;">
+          <form>
+            <div class="mb-3" style="text-align: center; width: 70%; margin: 0 auto;">
+              <label for="formGroupExampleInput" class="form-label" style="text-align: center;">
+                <b>Descobrir a senha do tesouro</b><br>
+                Com base de 8 metros, altura igual a 4 m, e lado de 5 m, busque a área que se encontrar.
+                Adicionando metade do perímetro, sem hesitar, revela-se a grandeza, deste lugar a se admirar.
+              </label>
+              <div class="contener-senha">
+                <div class="combination-lock">
+                    <div class="dial" id="dial1">
+                        <input type="number" min="0" max="9" value="0" maxlength="1">
+                    </div>
+                    <div class="dial" id="dial2">
+                        <input type="number" min="0" max="9" value="0" maxlength="1">
+                    </div>
+                    <div class="dial" id="dial3">
+                        <input type="number" min="0" max="9" value="0" maxlength="1">
+                    </div>
+                </div>
+              </div>
+              <div class="modal-footer" style="margin: 0 auto;">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal" style="margin: 0 auto;">Fechar</button>
+                <button type="button" class="btn btn-outline-dark" id="confirmButton" style="margin: 0 auto;" onclick="checkCombination()">Confirmar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div class="modal fade" id="secondModal" tabindex="-1" aria-labelledby="secondModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="text-align: center;">
+            Olá novamente, seja bem-vindo e explore o nosso paraíso!<br>
+            No parque central da cidade, as formas são um deslumbre preciso.<br>
+            Figuras planas dançam num ritmo sem igual,<br>
+            No parque geométrico, a diversão é manifestada.<br>
+            Formas planas se encontram, numa dança vibrante,<br>
+            Cada forma tem seu lugar, sua beleza constante.<br>
+            No parque geométrico, cheio de vida,<br>
+            Venha se encantar com a certeza das peças infinitas<br>
+            Com a mágica das formas, sempre a brilhar,<br>
+            Este paraíso geométrico está pronto para te encantar.<br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" id="continueButton">Continuar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+  <script>
+    // função apra ir para a proxima pagina se clicar em continuar ou se clicar fora do modal
+    document.getElementById('continueButton').addEventListener('click', function() {
+      window.location.href = 'desafio4.html';
+    });
+
+    document.getElementById('secondModal').addEventListener('hidden.bs.modal', function () {
+      window.location.href = 'desafio4.html';
+    });
+
+    function checkCombination() {
+        const dial1 = document.getElementById('dial1').getElementsByTagName('input')[0].value;
+        const dial2 = document.getElementById('dial2').getElementsByTagName('input')[0].value;
+        const dial3 = document.getElementById('dial3').getElementsByTagName('input')[0].value;
+
+        const combination = `${dial1}${dial2}${dial3}`;
+        const correctCombination = "064"; // Defina aqui a combinação correta
+
+        if (combination === correctCombination) {
+            var modal1 = new bootstrap.Modal(document.getElementById('exampleModal'));
+            var modal2 = new bootstrap.Modal(document.getElementById('secondModal'));
+            modal1.hide();
+            setTimeout(function() {
+            document.getElementById('exampleModal').remove(); // Remove o primeiro modal do DOM
+            var backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) {
+                backdrop.remove(); // Remove o backdrop do primeiro modal
+            }
+            modal2.show();
+            }, 500); // Aguarde a animação de ocultação do modal
+        } else {
+            alert("Combinação Incorreta!");
+        }
+    }
+  </script>
 </html>

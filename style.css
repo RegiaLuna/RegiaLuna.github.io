@@ -24,6 +24,27 @@
     align-items: center;
     justify-content: center;
 }
+
+.botao-desafio-3{
+    position:absolute;
+    width: 5rem;
+    height: 5rem;
+    top: 66%;
+    left: 83%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(243, 125, 51);
+    color: rgb(8, 1, 1);
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid;
+    font-size: 20px;
+    font-weight: bold;
+}
 .modal-nuvem .modal-content {
     background: url('img/nuvemCerta.png') no-repeat center center;
     background-size: 100% 90%; /* Aumenta a imagem para cobrir toda a área do modal */
@@ -59,3 +80,48 @@
     z-index: 1;
     display: block;
   }
+
+  .contener-senha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    }
+
+.combination-lock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.dial {
+    margin: 5px;
+}
+
+.dial input {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid #333;
+    border-radius: 10px;
+}
+
+button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}

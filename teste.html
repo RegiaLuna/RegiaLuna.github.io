@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadeado de Combinação</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .combination-lock {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .dial {
+            margin: 5px;
+        }
+
+        .dial input {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            text-align: center;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+
+        button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #333;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="combination-lock">
+        <div class="dial" id="dial1">
+            <input type="number" min="0" max="9" value="0" maxlength="1">
+        </div>
+        <div class="dial" id="dial2">
+            <input type="number" min="0" max="9" value="0" maxlength="1">
+        </div>
+        <div class="dial" id="dial3">
+            <input type="number" min="0" max="9" value="0" maxlength="1">
+        </div>
+        <button onclick="checkCombination()">Unlock</button>
+    </div>
+    <script>
+        function checkCombination() {
+            const dial1 = document.getElementById('dial1').getElementsByTagName('input')[0].value;
+            const dial2 = document.getElementById('dial2').getElementsByTagName('input')[0].value;
+            const dial3 = document.getElementById('dial3').getElementsByTagName('input')[0].value;
+
+            const combination = `${dial1}${dial2}${dial3}`;
+            const correctCombination = "123"; // Defina aqui a combinação correta
+
+            if (combination === correctCombination) {
+                alert("Cadeado Desbloqueado!");
+            } else {
+                alert("Combinação Incorreta!");
+            }
+        }
+    </script>
+</body>
+</html>
