@@ -93,9 +93,8 @@
       </p>
     </div>
 
-
     <div class="alert alert-light desafio" role="alert" id="desafio-1">
-      <form>
+      <form action="javaScript:void(0)" onsubmit="proximoDesafio()">
           <label for="formGroupExampleInput1" class="form-label">
             <p style="text-align: center;"><b>Prédio 3</b><br>
               Venha me conhecer!<br>
@@ -112,13 +111,13 @@
           <input type="text" class="form-control" id="resposta-imagem-3" placeholder="nome da figura" style="width: 60%; margin: 0 auto; margin-top: 10px; margin-bottom: 5px;">
           <input type="number" class="form-control" id="perimetro-imagem-3" placeholder="perimetro" style="width: 60%; margin: 0 auto; margin-top: 10px; margin-bottom: 5px;">
           <div class="modal-footer" style="margin: 0 auto;">
-            <button type="button" class="btn btn-outline-dark" id="confirma-desafio-3" style="margin: 0 auto;" onclick="proximoDesafio()">Confirmar</button>
+            <button type="button" class="btn btn-outline-dark" id="confirma-desafio-3" style="margin: 0 auto;">Confirmar</button>
           </div>
       </form>
     </div>
 
     <div class="alert alert-light desafio-2" role="alert" id="desafio-2">
-      <form>
+      <form action="javaScript:void(0)" onsubmit="proximoDesafio()">
         <p>
           <b>Prédio 2</b><br>
           Sabendo que meu perímetro é a soma das medidas de todos os meus lados.<br>
@@ -132,13 +131,13 @@
         <input type="text" class="form-control" id="resposta-imagem-2" placeholder="nome da figura" style="width: 60%; margin: 0 auto; margin-top: 10px; margin-bottom: 20px;">
         <input type="number" class="form-control" id="perimetro-imagem-2" placeholder="perimetro" style="width: 60%; margin: 0 auto; margin-top: 10px; margin-bottom: 20px;">
         <div class="modal-footer" style="margin: 0 auto;">
-          <button type="button" class="btn btn-outline-dark" id="confirma-desafio-2" onclick="proximoDesafio()" style="margin: 0 auto;">Confirmar</button>
+          <button type="submit" class="btn btn-outline-dark" id="confirma-desafio-2" style="margin: 0 auto; margin-top: 10px;">Confirmar</button>
         </div>
     </form>
     </div>
 
     <div class="alert alert-light desafio-3" role="alert" id="desafio-3">
-      <form>
+      <form action="javaScript:void(0)" onsubmit="proximoDesafio()">
           <p>
             <b>Prédio 1</b><br>
             Não escolha outro prédio! Sou o seu favorito!<br>
@@ -151,7 +150,7 @@
           <input type="number" class="form-control" id="perimetro-imagem-1" placeholder="perimetro" style="width: 60%; margin: 0 auto; margin-top: 10px; margin-bottom: 20px;">
           <input type="text" class="form-control"  id="resposta-imagem-1" placeholder="nome da figura" style="width: 60%; margin: 0 auto; margin-top: 10px; margin-bottom: 20px;">
           <div class="modal-footer" style="margin: 0 auto;">
-            <button type="button" class="btn btn-outline-dark" id="confirma-desafio-1" onclick="proximoDesafio()" style="margin: 0 auto;">Confirmar</button>
+            <button type="submit" class="btn btn-outline-dark" id="confirma-desafio-1" style="margin: 0 auto; margin-top: 80px;">Confirmar</button>
           </div>
       </form>
     </div>
@@ -167,7 +166,7 @@
             Parabéns! Você acertou a resposta.
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-outline-dark" id="continueButton">Continuar</button>
+            <button type="submit" class="btn btn-outline-dark" id="continueButton">Continuar</button>
           </div>
         </div>
       </div>

@@ -26,7 +26,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" style="background-color: transparent;">
-          <form >
+          <form action="javaScript:void(0)" onsubmit="checkCombination()">
             <div class="mb-3" style="text-align: center; width: 70%; margin: 0 auto;">
               <label for="formGroupExampleInput" class="form-label" style="text-align: center;">
                 <b>Descobrir a senha do tesouro</b><br>
@@ -49,7 +49,7 @@
               </div>
               <div class="modal-footer" style="margin: 0 auto;">
                 <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal" style="margin: 0 auto;">Fechar</button>
-                <button type="button" class="btn btn-outline-dark" id="confirmButton" style="margin: 0 auto;" onclick="checkCombination()">Confirmar</button>
+                <button type="submit" class="btn btn-outline-dark" id="confirmButton" style="margin: 0 auto;">Confirmar</button>
               </div>
             </div>
           </form>

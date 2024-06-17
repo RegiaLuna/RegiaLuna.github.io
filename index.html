@@ -35,13 +35,12 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" style="background-color: transparent;">
-          <form >
+          <form action="javaScript:void(0)" onsubmit="validaForms()">
             <div class="mb-3" style="text-align: center; width: 70%; margin: 0 auto;">
               <label for="formGroupExampleInput" class="form-label">
                 Olá, sejam todos bem vindos a cidade geométrica, para entrar nessa cidade plana você precisa
-                passar por esse fabuloso portal, agora monte a representação do brasão da cidade, qual
-                Tangram representa o encaixe dessas peças? Que juntas formam perfeitamente o famoso
-                brasão da cidade.
+                passar por esse fabuloso portal, agora monte a representação do brasão da cidade. Qual
+                Tangram representa o encaixe dessas peças que formam o brasão da cidade?
               </label>
               <img src="img/cavalo_coberto.jpeg" style="width: 300px;">
               <input type="text" class="form-control" id="formGroupExampleInput" placeholder="escreva sua resposta" style="width: 60%; margin: 0 auto; margin-top: 10px;">
@@ -68,7 +67,7 @@
           <img src="img/cavalo_desafio1.jpeg" style="width: 300px; margin: 0 auto;">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-dark" id="continueButton">Continuar</button>
+          <button type="submit" class="btn btn-outline-dark" id="continueButton">Continuar</button>
         </div>
       </div>
     </div>
@@ -78,7 +77,9 @@
   </body>
   <script>
     // primeiro desafio 
-    document.getElementById('confirmButton').addEventListener('click', function() {
+    function validaForms() {
+      // Prevenir o envio padrão do formulário
+      // event.preventDefault();
       var userInput = document.getElementById('formGroupExampleInput').value;
       if (userInput.toLowerCase() === 'cavalo') {
         var modal1 = new bootstrap.Modal(document.getElementById('exampleModal'));
@@ -96,7 +97,7 @@
       } else {
         alert('Resposta incorreta, tente novamente.');
       }
-    });
+    };
     // função apra ir para a proxima pagina se clicar em continuar ou se clicar fora do modal
     document.getElementById('continueButton').addEventListener('click', function() {
       // colocar a img pra aparecer
